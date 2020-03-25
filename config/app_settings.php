@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\UserIsAdmin;
+
 return [
 
     // All the sections for the settings page
@@ -62,7 +64,7 @@ return [
     'url' => 'settings',
 
     // Any middleware you want to run on above route
-    'middleware' => [],
+    'middleware' => [UserIsAdmin::class],
 
     // View settings
     'setting_page_view' => 'app_settings::settings_page',
