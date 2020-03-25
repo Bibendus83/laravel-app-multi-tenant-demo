@@ -32,7 +32,6 @@ return [
     */
 
     'connections' => [
-
         'system' => [
             'driver' => env('TENANCY_DRIVER', 'mysql'),
             'host' => env('TENANCY_HOST', '127.0.0.1'),
@@ -104,7 +103,6 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
         ],
-
     ],
 
     /*
