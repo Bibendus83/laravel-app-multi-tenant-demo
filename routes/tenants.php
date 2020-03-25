@@ -7,6 +7,7 @@ Route::middleware('web')
         Route::get('/', function () {
             return view('welcome');
         });
+        Route::get('/test', 'TestController@index')->name('test');
 
         Auth::routes();
 
