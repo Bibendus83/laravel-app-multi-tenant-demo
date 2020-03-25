@@ -16,7 +16,7 @@ class TestMultiTenantJob implements ShouldQueue
 
     public $retryAfter = 10;
 
-    public $tries = 10;
+    public $tries = 3;
 
     public $website_id;
 
