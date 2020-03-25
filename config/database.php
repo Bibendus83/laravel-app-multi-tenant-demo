@@ -59,7 +59,6 @@ return [
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
         ],
-
         'system' => [
             'driver' => env('TENANCY_DRIVER', 'mysql'),
             'host' => env('TENANCY_HOST', '127.0.0.1'),
