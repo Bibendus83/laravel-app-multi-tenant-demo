@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Services\BookingApiConnection;
 use Illuminate\Support\ServiceProvider;
 
+// php artisan config:clear
 class BookingApiConnectionServiceProvider extends ServiceProvider
 {
 
