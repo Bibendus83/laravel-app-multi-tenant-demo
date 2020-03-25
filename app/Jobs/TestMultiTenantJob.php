@@ -16,7 +16,7 @@ class TestMultiTenantJob implements ShouldQueue
 
     public $retryAfter = 10;
 
-    public $tries = 3;
+    public $tries = 999999;
 
     public $website_id;
 
@@ -58,6 +58,8 @@ class TestMultiTenantJob implements ShouldQueue
             $message = "The app_name configured in setting() is: ".setting("app_name");
             Log::debug($message);
             echo $message."\n";
+
+            throw new \Exception("Forced stop, all was OK");
 
         } catch (\Exception $e) {
             // Log::info($e->getTraceAsString());
