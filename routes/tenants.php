@@ -4,12 +4,10 @@ Route::middleware('web')
     ->namespace('App\\Http\\Controllers\\')
     ->group(function ()
     {
-        Route::get('/', function () {
-            return view('welcome');
-        });
+        Route::get('/', 'HomeController@index')->name('home');
         Route::get('/test', 'TestController@index')->name('test');
 
         Auth::routes();
 
-        Route::get('/home', 'HomeController@index')->name('home');
+        // Route::get('/logged', 'HomeController@logged')->name('logged');
     });
