@@ -23,6 +23,8 @@ class TestController extends Controller
      */
     public function index()
     {
+        TestMultiTenantJob::dispatch(app(\Hyn\Tenancy\Environment::class)->website()->id);
+
         return view('test');
     }
 }
