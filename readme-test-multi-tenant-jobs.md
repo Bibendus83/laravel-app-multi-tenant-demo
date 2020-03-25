@@ -7,3 +7,4 @@ Follow the default installation guide you can find in the master branch
 Then
 
 `php artisan tenancy:db:seed --website_id=1
+`php artisan queue:listen

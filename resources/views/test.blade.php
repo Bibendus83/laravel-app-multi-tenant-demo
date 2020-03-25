@@ -8,7 +8,7 @@
                 <div class="card-header">Test Page</div>
 
                 <div class="card-body">
-                    Created TestMultiTenantJob, run `php artisan queue:listen` to init the queue worker
+                    Created TestMultiTenantJob, remember to run `<b>php artisan queue:listen</b>` to init the queue worker
                 </div>
             </div>
         </div>
