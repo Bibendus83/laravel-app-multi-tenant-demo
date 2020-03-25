@@ -42,6 +42,7 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
+            'url' => env('DATABASE_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'forge'),
@@ -60,7 +61,7 @@ return [
         ],
 
         'system' => [
-            'driver' => 'mysql',
+            'driver' => env('TENANCY_DRIVER', 'mysql'),
             'host' => env('TENANCY_HOST', '127.0.0.1'),
             'port' => env('TENANCY_PORT', '3306'),
             'database' => env('TENANCY_DATABASE', 'tenancy'),
