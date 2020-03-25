@@ -36,8 +36,14 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['daily'],
+            'channels' => ['tenant'],
             'ignore_exceptions' => false,
+        ],
+
+        'tenant' => [
+            'driver' => 'custom',
+            'via' => \Hyn\Tenancy\Logging\TenantAwareLogger::class,
+            'level' => 'debug',
         ],
 
         'single' => [
