@@ -72,7 +72,7 @@ return [
          *
          * This should be enabled for MySQL, but not for MariaDB and PostgreSQL.
          */
-        'uuid-limit-length-to-32' => env('LIMIT_UUID_LENGTH_32', true),
+        'uuid-limit-length-to-32' => env('LIMIT_UUID_LENGTH_32', false),
 
         /**
          * Specify the disk you configured in the filesystems.php file where to store
