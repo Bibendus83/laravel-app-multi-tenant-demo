@@ -228,9 +228,7 @@ return [
          *
          * @warn specify a valid fully qualified class name.
          */
-        'tenant-seed-class' => false,
-//      eg an admin seeder under `app/Seeders/AdminSeeder.php`:
-//        'tenant-seed-class' => App\Seeders\AdminSeeder::class,
+        'tenant-seed-class' => AdminSeeder::class,
 
         /**
          * Automatically generate a tenant database based on the random id of the
