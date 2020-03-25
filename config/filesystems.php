@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'default' => env('FILESYSTEM_DRIVER', 'tenant'),
 
     /*
     |--------------------------------------------------------------------------
@@ -42,7 +42,15 @@ return [
     */
 
     'disks' => [
-
+        // 'tenant' => [
+        //     'driver' => 'local',
+        //     'root' => app(\Hyn\Tenancy\Website\Directory::class)->path('',true),
+        // ],
+        // Driver dummy che viene poi sovrascritto dall'evento ActivatesDisk
+        'tenant' => [
+            'driver' => 'local',
+            'root' => storage_path('app'),
+        ],
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),

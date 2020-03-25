@@ -28,7 +28,7 @@ return [
                     'label' => 'Upload logo',
                     'hint' => 'Must be an image and cropped in desired size',
                     'rules' => 'image|max:500',
-                    'disk' => 'public', // which disk you want to upload
+                    'disk' => 'tenant', // which disk you want to upload
                     'path' => 'app', // path on the disk,
                     'preview_class' => 'thumbnail',
                     'preview_style' => 'height:40px'
