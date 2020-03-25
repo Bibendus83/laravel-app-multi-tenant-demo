@@ -14,6 +14,10 @@ class TestMultiTenantJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
+    public $retryAfter = 10;
+
+    public $tries = 10;
+
     public $website_id;
 
     /**
@@ -33,29 +37,41 @@ class TestMultiTenantJob implements ShouldQueue
      */
     public function handle()
     {
+        $message = "==== TestMultiTenantJob->handle() START =====";
+        Log::debug($message);
+        echo $message."\n";
+
         try {
+            $message = "Website ID  is: ".$this->website_id;
+            Log::debug($message);
+            echo $message."\n";
+
             $admin = User::where("name", "admin")->first();
             if (!$admin) {
                 throw new \Exception("User admin not found, please execute command `php artisan tenancy:db:seed --website_id=<YOUR_WEBSITE_ID>`");
             }
 
-            $message = "Website ID  is: ".$this->website_id;
-            Log::debug($message);
-            echo $message."\n<br>\n";
-
             $message = "The admin email is: ".$admin->email;
             Log::debug($message);
-            echo $message."\n<br>\n";
+            echo $message."\n";
 
             $message = "The app_name configured in setting() is: ".setting("app_name");
             Log::debug($message);
-            echo $message."\n<br>\n";
+            echo $message."\n";
 
         } catch (\Exception $e) {
-            Log::info($e->getTraceAsString());
-            $this->release(60);
+            // Log::info($e->getTraceAsString());
+            $this->release($this->retryAfter);
+
+            $message = "==== TestMultiTenantJob->handle() ERROR =====";
+            Log::debug($message);
+            echo $message."\n";
 
             throw $e;
         }
+
+        $message = "==== TestMultiTenantJob->handle() SUCCESS =====";
+        Log::debug($message);
+        echo $message."\n";
     }
 }
