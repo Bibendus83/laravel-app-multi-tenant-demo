@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Rome',
 
     /*
     |--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => env('LOCALE', 'it'),
 
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +106,7 @@ return [
     |
     */
 
-    'faker_locale' => 'en_US',
+    'faker_locale' => 'it_IT',
 
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +165,12 @@ return [
         /*
          * Package Service Providers...
          */
+        Hyn\Tenancy\Providers\TenancyProvider::class,
+        Hyn\Tenancy\Providers\WebserverProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
+        Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
+        QCod\Settings\SettingsServiceProvider::class,
+        QCod\AppSettings\AppSettingsServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -174,7 +180,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
     ],
 
     /*
