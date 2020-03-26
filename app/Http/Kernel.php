@@ -21,7 +21,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrustProxies::class,
 
         // Custom middlewares
-        \App\Http\Middleware\ForceHttpsProtocol::class,
+        // \App\Http\Middleware\ForceHttpsProtocol::class,
     ];
 
     /**
@@ -38,7 +38,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \App\Http\Middleware\InitJavascriptConstants::class,
+            // \App\Http\Middleware\InitJavascriptConstants::class,
         ],
 
         'api' => [
