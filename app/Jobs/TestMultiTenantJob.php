@@ -3,6 +3,8 @@
 namespace App\Jobs;
 
 use App\User;
+use Hyn\Tenancy\Environment;
+use Hyn\Tenancy\Models\Website;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -42,6 +44,9 @@ class TestMultiTenantJob implements ShouldQueue
         echo $message."\n";
 
         try {
+            // Trying to force the website before calling settings
+            // app(Environment::class)->tenant(Website::find($this->website_id));
+
             $message = "Website ID  is: ".$this->website_id;
             Log::debug($message);
             echo $message."\n";
