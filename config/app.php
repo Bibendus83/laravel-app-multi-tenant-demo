@@ -167,7 +167,7 @@ return [
          */
         Hyn\Tenancy\Providers\TenancyProvider::class,
         Hyn\Tenancy\Providers\WebserverProvider::class,
-        Spatie\Permission\PermissionServiceProvider::class,
+        // Spatie\Permission\PermissionServiceProvider::class,
         Laracasts\Utilities\JavaScript\JavaScriptServiceProvider::class,
         QCod\Settings\SettingsServiceProvider::class,
         QCod\AppSettings\AppSettingsServiceProvider::class,
