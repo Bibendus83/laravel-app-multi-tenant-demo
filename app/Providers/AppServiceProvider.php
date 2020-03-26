@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Hyn\Tenancy\Environment;
 use Illuminate\Support\ServiceProvider;
 // use Laravel\Cashier\Cashier;
 
@@ -24,6 +25,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $env = app(Environment::class);
+
+        if ($fqdn = optional($env->hostname())->fqdn) {
+            config(['database.default' => 'tenant']);
+        }
     }
 }
