@@ -44,7 +44,7 @@ class TestMultiTenantJob implements ShouldQueue
         echo $message."\n";
 
         try {
-            // Trying to force the website before calling settings
+            // Tries to force the website before calling settings but it doesn't work
             // app(Environment::class)->tenant(Website::find($this->website_id));
 
             $message = "Website ID  is: ".$this->website_id;
