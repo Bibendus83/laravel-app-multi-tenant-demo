@@ -47,6 +47,9 @@ class TestMultiTenantJob implements ShouldQueue
             // Tries to force the website before calling settings but it doesn't work
             // app(Environment::class)->tenant(Website::find($this->website_id));
 
+            // Hack that works forcing the connection provider to re elaborate `force-tenant-connection-of-models` and `force-system-connection-of-models`
+            // app()->resolveProvider(\Hyn\Tenancy\Providers\Tenants\ConnectionProvider::class)->overrideConnectionResolvers();
+
             $message = "Website ID  is: ".$this->website_id;
             Log::debug($message);
             echo $message."\n";
